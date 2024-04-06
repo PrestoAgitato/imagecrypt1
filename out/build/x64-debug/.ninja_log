@@ -1,0 +1,17 @@
+# ninja log v5
+12	414	7287306036564870	CMakeFiles/MyAudioProject.dir/src/tinyfiledialogs.cpp.obj	e3a8ff6d1a91ab53
+11	797	7287311839438662	CMakeFiles/MyAudioProject.dir/src/main.cpp.obj	7a3e78ad6534102
+10	17	0	clean	42e6bfbeb8016524
+798	951	7287311840338869	MyAudioProject.exe	43a99cc70f66e259
+25	404	7287316385600118	build.ninja	b07c5b87b03ee16a
+14	457	7287318242358160	CMakeFiles/MyAudioProject.dir/src/SliderSFML.cpp.obj	4c4b1c13e1a8251b
+11	528	7287318243058325	CMakeFiles/MyAudioProject.dir/src/main.cpp.obj	7a3e78ad6534102
+528	709	7287318244188572	MyAudioProject.exe	ca0103eefaad151a
+9	16	0	clean	42e6bfbeb8016524
+11	608	7287318408501441	CMakeFiles/MyAudioProject.dir/src/tinyfiledialogs.cpp.obj	e3a8ff6d1a91ab53
+13	612	7287318408531443	CMakeFiles/MyAudioProject.dir/src/SliderSFML.cpp.obj	4c4b1c13e1a8251b
+8	625	7287318408701481	CMakeFiles/MyAudioProject.dir/src/main.cpp.obj	7a3e78ad6534102
+626	810	7287318409871746	MyAudioProject.exe	ca0103eefaad151a
+13	561	7287437967550407	CMakeFiles/MyAudioProject.dir/src/SliderSFML.cpp.obj	4c4b1c13e1a8251b
+11	572	7287437967660437	CMakeFiles/MyAudioProject.dir/src/main.cpp.obj	7a3e78ad6534102
+579	753	7287437968760715	MyAudioProject.exe	ca0103eefaad151a
