@@ -27,6 +27,7 @@ void selectRef(const std::string& selection);
 void load_image();
 void selectImage(const std::string& selection);
 void processSound(const std::vector<float>& floatData, int chs);
+void remove();
 #ifndef M_PI
 #define M_PI   3.14159265358979323846264338327950288
 #endif // !M_PI
@@ -99,6 +100,10 @@ int main()
     Button encrypt1("ENCRYPT", { 100,25 }, 14, sf::Color::Green, sf::Color::Black);
     encrypt1.setFont(arial);
     encrypt1.setPosition({ 10,130 });
+
+    Button remove1("REMOVE", { 100,25 }, 14, sf::Color::Green, sf::Color::Black);
+    remove1.setFont(arial);
+    remove1.setPosition({ 10,160 });
     
     //создаём слайдеры
 
@@ -132,7 +137,7 @@ int main()
 
 
     // список кнопок
-    Button buttons[] = { load_ref1, create_ref1,load_image1,encrypt1 };
+    Button buttons[] = { load_ref1, create_ref1,load_image1,encrypt1,remove1 };
 
 
     while (window.isOpen()) {
@@ -154,6 +159,9 @@ int main()
                     }
                     else if (create_ref1.isMouseOver(window)) {
                         create_ref();
+                    }
+                    else if (remove1.isMouseOver(window)) {
+                        remove();
                     }
                 }
             }
@@ -374,6 +382,22 @@ void encrypt() {
     }
 }
 
+void remove() {
+    refPath = "";
+    imagePath = "";
+    ref.clear();
+    img.clear();
+    lines.clear();
+    lines1.clear();
+    points.clear();
+    lines.resize(300);
+    lines1.resize(300);
+    soundPiece.clear();
+    soundPiece.resize(256);
+    spectrum.clear();
+    spectrum.resize(256);
+}
+
 void load_ref() {
     const char* filterPatterns[2] = { "*.wav", "*.mp3" };
 
@@ -459,6 +483,7 @@ void load_image() {
         NULL,
         0
     );
+    std::cout << "filePath: " << filePath << std::endl;
 
     if (filePath) {
         selectImage(filePath);
@@ -518,7 +543,6 @@ void selectImage(const std::string& selection) {
             resizedImage.setPixel(x, y, sf::Color(grayscaleValue, grayscaleValue, grayscaleValue));
         }
     }
-
     // Обновляем вектор img значениями яркости в оттенках серого
     img.clear(); // Очищаем вектор для удаления предыдущих данных
     for (unsigned int y = 0; y < resizedImage.getSize().y; ++y) {  // Проходим по каждой строке пикселей
@@ -532,7 +556,7 @@ void selectImage(const std::string& selection) {
         }
     }
     std::cout << "Img length: " << img.size() << std::endl;
-    if (resizedImage.saveToFile("grayscale_image.png")) {// Попытка сохранить изображение
+    if (resizedImage.saveToFile("grayscale_image.jpg")) {// Попытка сохранить изображение
         std::cout << "Grayscale image saved successfully." << std::endl;
     }
     else {
